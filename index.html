@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vinitha – Makeup Artist Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .fade {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: 0.8s ease;
+      }
+      .fade.visible {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+      .gradient-text {
+        background: linear-gradient(135deg, #ec4899 0%, #f97316 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .service-card {
+        transition: all 0.3s ease;
+      }
+      .service-card:hover {
+        transform: translateY(-10px);
+      }
+      .portfolio-img {
+        transition: all 0.4s ease;
+        cursor: pointer;
+      }
+      .portfolio-img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
+      .mobile-menu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+      .mobile-menu.open {
+        max-height: 300px;
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+      .floating {
+        animation: float 3s ease-in-out infinite;
+      }
+      .testimonial-card {
+        transition: all 0.3s ease;
+      }
+      .testimonial-card:hover {
+        transform: scale(1.02);
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900">
+    <!-- NAVBAR -->
+    <header
+      class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-50"
+    >
+      <div class="max-w-7xl mx-auto px-5 py-4">
+        <div class="flex justify-between items-center">
+          <h1 class="text-2xl font-bold gradient-text">Vinitha</h1>
+          <nav class="hidden md:flex gap-8">
+            <a href="#home" class="hover:text-pink-500 transition">Home</a>
+            <a href="#about" class="hover:text-pink-500 transition">About</a>
+            <a href="#services" class="hover:text-pink-500 transition"
+              >Services</a
+            >
+            <a href="#portfolio" class="hover:text-pink-500 transition"
+              >Portfolio</a
+            >
+            <a href="#testimonials" class="hover:text-pink-500 transition"
+              >Testimonials</a
+            >
+            <a href="#contact" class="hover:text-pink-500 transition"
+              >Contact</a
+            >
+          </nav>
+          <button id="menuBtn" class="md:hidden text-2xl">☰</button>
+        </div>
+        <nav id="mobileMenu" class="mobile-menu md:hidden">
+          <div class="flex flex-col gap-4 pt-4">
+            <a href="#home" class="hover:text-pink-500 transition">Home</a>
+            <a href="#about" class="hover:text-pink-500 transition">About</a>
+            <a href="#services" class="hover:text-pink-500 transition"
+              >Services</a
+            >
+            <a href="#portfolio" class="hover:text-pink-500 transition"
+              >Portfolio</a
+            >
+            <a href="#testimonials" class="hover:text-pink-500 transition"
+              >Testimonials</a
+            >
+            <a href="#contact" class="hover:text-pink-500 transition"
+              >Contact</a
+            >
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section
+      id="home"
+      class="pt-32 pb-20 bg-gradient-to-br from-pink-50 via-orange-50 to-white relative overflow-hidden"
+    >
+      <div
+        class="absolute top-20 right-10 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"
+      ></div>
+      <div
+        class="absolute bottom-10 left-10 w-72 h-72 bg-orange-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"
+        style="animation-delay: 1s"
+      ></div>
+      <div
+        class="max-w-7xl mx-auto px-5 grid md:grid-cols-2 gap-10 items-center fade relative z-10"
+      >
+        <div>
+          <div
+            class="inline-block px-4 py-2 bg-pink-100 text-pink-600 rounded-full text-sm font-semibold mb-4"
+          >
+            ✨ Award-Winning Artist
+          </div>
+          <h2 class="text-4xl md:text-6xl font-bold leading-tight">
+            Hi, I'm <span class="gradient-text">Vinitha</span><br />Professional
+            Makeup Artist
+          </h2>
+          <p class="mt-5 text-gray-600 text-lg">
+            Enhancing your natural beauty for weddings, photoshoots & special
+            occasions with expertise and passion.
+          </p>
+          <div class="flex gap-4 mt-8 flex-wrap">
+            <a
+              href="#contact"
+              class="px-8 py-4 bg-gradient-to-r from-pink-500 to-orange-500 text-white rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition transform"
+              >Book Appointment</a
+            >
+            <a
+              href="#portfolio"
+              class="px-8 py-4 bg-white border-2 border-pink-500 text-pink-500 rounded-lg hover:bg-pink-50 transition"
+              >View Work</a
+            >
+          </div>
+          <div class="grid grid-cols-3 gap-6 mt-12">
+            <div>
+              <div class="text-3xl font-bold gradient-text">500+</div>
+              <div class="text-sm text-gray-600">Happy Clients</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold gradient-text">8+</div>
+              <div class="text-sm text-gray-600">Years Experience</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold gradient-text">100%</div>
+              <div class="text-sm text-gray-600">Satisfaction</div>
+            </div>
+          </div>
+        </div>
+        <div class="floating">
+          <img
+            src="586205899_18347953321202285_5054504198409301410_n.jpg"
+            class="rounded-2xl shadow-2xl"
+            alt="Vinitha Makeup Artist"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-20">
+      <div class="max-w-6xl mx-auto px-5 fade">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold mb-4">About Me</h2>
+          <div
+            class="w-20 h-1 bg-gradient-to-r from-pink-500 to-orange-500 mx-auto mb-6"
+          ></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <img
+              src="IMG_4616.JPEG"
+              class="rounded-2xl shadow-xl"
+              alt="About Vinitha"
+            />
+          </div>
+          <div>
+            <p class="text-gray-600 text-lg leading-relaxed mb-6">
+              I am Vinitha, a Tirunelveli-based makeup artist specializing in
+              bridal, HD makeup, glam looks, and party makeup. With over 8 years
+              of experience, I help clients achieve their dream look for every
+              event.
+            </p>
+            <p class="text-gray-600 text-lg leading-relaxed mb-6">
+              My passion is bringing out the natural beauty in everyone I work
+              with. I believe makeup should enhance your features, not mask
+              them.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-center gap-3">
+                <span class="text-pink-500 text-2xl">✓</span
+                ><span class="text-gray-700"
+                  >Certified Professional Makeup Artist</span
+                >
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="text-pink-500 text-2xl">✓</span
+                ><span class="text-gray-700">Premium Quality Products</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="text-pink-500 text-2xl">✓</span
+                ><span class="text-gray-700">Personalized Consultation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SERVICES -->
+    <section id="services" class="py-20 bg-gradient-to-b from-white to-pink-50">
+      <div class="max-w-7xl mx-auto px-5 fade">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold mb-4">Services</h2>
+          <div
+            class="w-20 h-1 bg-gradient-to-r from-pink-500 to-orange-500 mx-auto mb-6"
+          ></div>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Specialized makeup services tailored to your unique style and
+            occasion
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div
+            class="service-card p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full flex items-center justify-center text-white text-2xl mb-4"
+            >
+              💄
+            </div>
+            <h3 class="text-2xl font-semibold mb-3">Bridal Makeup</h3>
+            <p class="text-gray-600 mb-4">
+              Perfect HD bridal look for your special day with long-lasting
+              finish.
+            </p>
+            <ul class="text-sm text-gray-600 space-y-2">
+              <li>• Trial session included</li>
+              <li>• Premium products</li>
+              <li>• Airbrush makeup</li>
+            </ul>
+          </div>
+          <div
+            class="service-card p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full flex items-center justify-center text-white text-2xl mb-4"
+            >
+              💅
+            </div>
+            <h3 class="text-2xl font-semibold mb-3">Nail Extensions</h3>
+            <p class="text-gray-600 mb-4">
+              Beautiful and durable nail extensions for that perfect finishing
+              touch.
+            </p>
+            <ul class="text-sm text-gray-600 space-y-2">
+              <li>• Acrylic & gel options</li>
+              <li>• Custom designs</li>
+              <li>• Long-lasting quality</li>
+            </ul>
+          </div>
+          <div
+            class="service-card p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full flex items-center justify-center text-white text-2xl mb-4"
+            >
+              🤵
+            </div>
+            <h3 class="text-2xl font-semibold mb-3">Groom Makeup</h3>
+            <p class="text-gray-600 mb-4">
+              Natural and sophisticated looks that enhance the groom's features.
+            </p>
+            <ul class="text-sm text-gray-600 space-y-2">
+              <li>• Subtle enhancement</li>
+              <li>• Camera-ready finish</li>
+              <li>• Professional styling</li>
+            </ul>
+          </div>
+          <div
+            class="service-card p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full flex items-center justify-center text-white text-2xl mb-4"
+            >
+              👰
+            </div>
+            <h3 class="text-2xl font-semibold mb-3">Bridesmaid Makeup</h3>
+            <p class="text-gray-600 mb-4">
+              Coordinated elegant looks for the entire bridal party.
+            </p>
+            <ul class="text-sm text-gray-600 space-y-2">
+              <li>• Complementary styles</li>
+              <li>• Group packages</li>
+              <li>• Quick application</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="py-20">
+      <div class="max-w-7xl mx-auto px-5 fade">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold mb-4">Portfolio</h2>
+          <div
+            class="w-20 h-1 bg-gradient-to-r from-pink-500 to-orange-500 mx-auto mb-6"
+          ></div>
+          <p class="text-gray-600">A glimpse of my recent work</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="relative group overflow-hidden rounded-2xl">
+            <img
+              src="nail.jpeg"
+              class="portfolio-img w-full h-80 object-cover rounded-2xl"
+              alt="Bridal Elegance"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6"
+            >
+              <div class="text-white">
+                <h3 class="text-xl font-bold">Bridal Elegance</h3>
+                <p class="text-sm">Traditional Bridal Makeup</p>
+              </div>
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-2xl">
+            <img
+              src="party galm.JPG"
+              class="portfolio-img w-full h-80 object-cover rounded-2xl"
+              alt="Party Glam"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6"
+            >
+              <div class="text-white">
+                <h3 class="text-xl font-bold">Party Glam</h3>
+                <p class="text-sm">Evening Party Makeup</p>
+              </div>
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-2xl">
+            <img
+              src="WhatsApp Image 2025-11-20 at 9.18.26 AM (2).jpeg"
+              class="portfolio-img w-full h-80 object-cover rounded-2xl"
+              alt="HD Photoshoot"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6"
+            >
+              <div class="text-white">
+                <h3 class="text-xl font-bold">HD Photoshoot</h3>
+                <p class="text-sm">Professional Shoot Makeup</p>
+              </div>
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-2xl">
+            <img
+              src="good.jpeg"
+              class="portfolio-img w-full h-80 object-cover rounded-2xl"
+              alt="Engagement Special"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6"
+            >
+              <div class="text-white">
+                <h3 class="text-xl font-bold">Engagement Special</h3>
+                <p class="text-sm">Soft Glam Look</p>
+              </div>
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-2xl">
+            <img
+              src="South Indian bride.jpeg"
+              class="portfolio-img w-full h-80 object-cover rounded-2xl"
+              alt="South Indian Bride"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6"
+            >
+              <div class="text-white">
+                <h3 class="text-xl font-bold">South Indian Bride</h3>
+                <p class="text-sm">Traditional Bridal Makeup</p>
+              </div>
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-2xl">
+            <img
+              src="lookuse this.jpeg"
+              class="portfolio-img w-full h-80 object-cover rounded-2xl"
+              alt="Reception Look"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6"
+            >
+              <div class="text-white">
+                <h3 class="text-xl font-bold">Reception Look</h3>
+                <p class="text-sm">Modern Bridal Makeup</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- TESTIMONIALS -->
+    <section
+      id="testimonials"
+      class="py-20 bg-gradient-to-b from-white to-pink-50"
+    >
+      <div class="max-w-7xl mx-auto px-5 fade">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold mb-4">What Clients Say</h2>
+          <div
+            class="w-20 h-1 bg-gradient-to-r from-pink-500 to-orange-500 mx-auto mb-6"
+          ></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="testimonial-card bg-white p-8 rounded-2xl shadow-lg">
+            <div class="flex gap-1 text-yellow-400 text-xl mb-4">★★★★★</div>
+            <p class="text-gray-600 mb-6 italic">
+              "Every person in the wedding praised the makeup! Initially I had
+              doubts because I never wore makeup before, but I looked absolutely
+              stunning. Thank you so much for your wonderful service!"
+            </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full flex items-center justify-center text-white font-bold"
+              >
+                I
+              </div>
+              <div>
+                <div class="font-semibold">Indhuja</div>
+                <div class="text-sm text-gray-500">
+                  Rahmath Nagar, Tirunelveli
+                </div>
+                <div class="text-xs text-gray-400">Feb 10, 2024</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card bg-white p-8 rounded-2xl shadow-lg">
+            <div class="flex gap-1 text-yellow-400 text-xl mb-4">★★★★★</div>
+            <p class="text-gray-600 mb-6 italic">
+              "I had the pleasure of booking Vini for my engagement. I requested
+              a natural and subtle look, and she delivered it on point. Received
+              a lot of compliments! Definitely happy and glad in choosing Vini
+              Makeover."
+            </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full flex items-center justify-center text-white font-bold"
+              >
+                I
+              </div>
+              <div>
+                <div class="font-semibold">Ishrath</div>
+                <div class="text-sm text-gray-500">Melapalayam</div>
+                <div class="text-xs text-gray-400">Aug 27, 2025</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card bg-white p-8 rounded-2xl shadow-lg">
+            <div class="flex gap-1 text-yellow-400 text-xl mb-4">★★★★★</div>
+            <p class="text-gray-600 mb-6 italic">
+              "The muhurtham makeover was really mind-blowing! Everybody
+              appreciated the colour combinations and finishing. Thanks for
+              making my big day even more special. Amma and sister's bridesmaid
+              look was also very nice!"
+            </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full flex items-center justify-center text-white font-bold"
+              >
+                N
+              </div>
+              <div>
+                <div class="font-semibold">Nithya</div>
+                <div class="text-sm text-gray-500">
+                  Maharaja Nagar, Tirunelveli
+                </div>
+                <div class="text-xs text-gray-400">Jun 5, 2024</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card bg-white p-8 rounded-2xl shadow-lg">
+            <div class="flex gap-1 text-yellow-400 text-xl mb-4">★★★★★</div>
+            <p class="text-gray-600 mb-6 italic">
+              "Thank you for the absolutely beautiful makeup! You patiently
+              listened to all my expectations and gave me exactly what I wanted.
+              The makeup stayed fresh and flawless for so long. I felt super
+              confident and happy throughout!"
+            </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full flex items-center justify-center text-white font-bold"
+              >
+                M
+              </div>
+              <div>
+                <div class="font-semibold">Monicka</div>
+                <div class="text-sm text-gray-500">Donavur</div>
+                <div class="text-xs text-gray-400">May 5, 2025</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-20 bg-pink-50">
+      <div class="max-w-6xl mx-auto px-5 fade">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold mb-4">Get In Touch</h2>
+          <div
+            class="w-20 h-1 bg-gradient-to-r from-pink-500 to-orange-500 mx-auto mb-6"
+          ></div>
+          <p class="text-gray-600">Let's create your perfect look together</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12">
+          <div>
+            <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-12 h-12 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full flex items-center justify-center text-white flex-shrink-0"
+                >
+                  📍
+                </div>
+                <div>
+                  <div class="font-semibold mb-1">Location</div>
+                  <div class="text-gray-600">Tirunelveli, Tamil Nadu</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-12 h-12 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full flex items-center justify-center text-white flex-shrink-0"
+                >
+                  📞
+                </div>
+                <div>
+                  <div class="font-semibold mb-1">Phone</div>
+                  <div class="text-gray-600">+91 XXXXX XXXXX</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-12 h-12 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full flex items-center justify-center text-white flex-shrink-0"
+                >
+                  ✉️
+                </div>
+                <div>
+                  <div class="font-semibold mb-1">Email</div>
+                  <div class="text-gray-600">Vinivino209@gmail.com</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-12 h-12 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full flex items-center justify-center text-white flex-shrink-0"
+                >
+                  ⏰
+                </div>
+                <div>
+                  <div class="font-semibold mb-1">Working Hours</div>
+                  <div class="text-gray-600">Mon - Sun: 9:00 AM - 8:00 PM</div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-8">
+              <h4 class="font-semibold mb-4">Follow Me</h4>
+              <div class="flex gap-4">
+                <a
+                  href="#"
+                  class="w-12 h-12 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition transform"
+                  >f</a
+                >
+                <a
+                  href="https://www.instagram.com/vinii_makeover_nail_artistry/"
+                  class="w-12 h-12 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition transform"
+                  >📷</a
+                >
+                <a
+                  href="#"
+                  class="w-12 h-12 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition transform"
+                  >W</a
+                >
+              </div>
+            </div>
+          </div>
+          <form class="p-8 bg-white rounded-2xl shadow-xl grid gap-5">
+            <div>
+              <label class="block text-sm font-semibold mb-2 text-gray-700"
+                >Your Name *</label
+              >
+              <input
+                type="text"
+                placeholder="Enter your name"
+                required
+                class="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent outline-none transition"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold mb-2 text-gray-700"
+                >Your Email *</label
+              >
+              <input
+                type="email"
+                placeholder="Enter your email"
+                required
+                class="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent outline-none transition"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold mb-2 text-gray-700"
+                >Phone Number</label
+              >
+              <input
+                type="tel"
+                placeholder="Enter your phone number"
+                class="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent outline-none transition"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold mb-2 text-gray-700"
+                >Service Interested In</label
+              >
+              <select
+                class="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent outline-none transition"
+              >
+                <option>Select a service</option>
+                <option>Bridal Makeup</option>
+                <option>Party Makeup</option>
+                <option>Photoshoot Makeup</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold mb-2 text-gray-700"
+                >Message *</label
+              >
+              <textarea
+                placeholder="Tell me about your requirements..."
+                rows="4"
+                required
+                class="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent outline-none transition"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="bg-gradient-to-r from-pink-500 to-orange-500 text-white py-4 rounded-lg hover:shadow-xl hover:scale-105 transition transform font-semibold"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 bg-gray-900 text-white">
+      <div class="max-w-7xl mx-auto px-5">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <h3 class="text-2xl font-bold gradient-text mb-4">Vinitha</h3>
+            <p class="text-gray-400">
+              Professional makeup artist bringing out your natural beauty for
+              every occasion.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Quick Links</h4>
+            <div class="space-y-2">
+              <a
+                href="#home"
+                class="block text-gray-400 hover:text-pink-400 transition"
+                >Home</a
+              >
+              <a
+                href="#about"
+                class="block text-gray-400 hover:text-pink-400 transition"
+                >About</a
+              >
+              <a
+                href="#services"
+                class="block text-gray-400 hover:text-pink-400 transition"
+                >Services</a
+              >
+              <a
+                href="#portfolio"
+                class="block text-gray-400 hover:text-pink-400 transition"
+                >Portfolio</a
+              >
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Services</h4>
+            <div class="space-y-2">
+              <div class="text-gray-400">Bridal Makeup</div>
+              <div class="text-gray-400">Party Makeup</div>
+              <div class="text-gray-400">Photoshoot Makeup</div>
+              <div class="text-gray-400">Consultation</div>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Connect</h4>
+            <div class="space-y-2 text-gray-400">
+              <div>📍 Tirunelveli, Tamil Nadu</div>
+              <div>📞 +91 XXXXX XXXXX</div>
+              <div>✉️ Vinivino209@gmail.com</div>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+          <p>© 2025 Vinitha – Makeup Artist. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const fadeEls = document.querySelectorAll(".fade");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("visible");
+          });
+        },
+        { threshold: 0.2 }
+      );
+      fadeEls.forEach((el) => observer.observe(el));
+
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("open");
+        menuBtn.textContent = mobileMenu.classList.contains("open") ? "✕" : "☰";
+      });
+
+      document.querySelectorAll("#mobileMenu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.remove("open");
+          menuBtn.textContent = "☰";
+        });
+      });
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            const offset = 80;
+            const targetPosition = target.offsetTop - offset;
+            window.scrollTo({ top: targetPosition, behavior: "smooth" });
+          }
+        });
+      });
+
+      document.querySelector("form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert("Thank you for your message! I will get back to you soon.");
+        e.target.reset();
+      });
+    </script>
+  </body>
+</html>
